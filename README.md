@@ -1,4 +1,8 @@
-# otto-klaus
+# FIREBASE Auth:
+User: test@test.com
+pass: 123456
+
+# Otto-Klaus
 
 ## Project setup
 ```
