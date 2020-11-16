@@ -11,7 +11,7 @@ const routes = [
     path: '/',
     name: 'Toyz',
     component: Toyz,
-    alias: ['/toyz'],
+    alias: ['/toys'],
     meta: {
       login: true
     }

@@ -25,9 +25,9 @@
         <v-spacer></v-spacer>
 
         <v-btn v-if="currentUser" @click="logout" text>
-          <span class="mr-2">Cerrar Sesión</span>
-          <v-icon>mdi-lock-open</v-icon>
-        </v-btn>
+        <span class="mr-2">Cerrar Sesión</span>
+        <v-icon>mdi-lock-open</v-icon>
+      </v-btn>
       </v-app-bar>
 
       <v-main>
@@ -42,6 +42,12 @@ import firebase from "firebase";
 import { mapState, mapActions } from "vuex";
 export default {
   name: "App",
+  data: () => ({
+    //
+  }),
+    computed: {
+    ...mapState(["currentUser"]),
+  },
   methods: {
     ...mapActions(["updateCurrentUser"]),
     logout() {
@@ -52,11 +58,9 @@ export default {
           this.updateCurrentUser(null);
           this.$router.push("/login");
         });
+        },
     },
-  },
-  computed: {
-    ...mapState(["currentUser"]),
-  },
+
   created() {
     this.updateCurrentUser(firebase.auth().currentUser);
   },
